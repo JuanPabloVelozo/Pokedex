@@ -1,0 +1,31 @@
+#conteiner {
+  height: calc(100vh - 110px); //distancia del header
+  display: grid;
+  grid-template-columns: 0.57fr 1fr;
+  align-items: center;
+  background: #79a9e3;
+}
+
+app-foto-pokemon {
+  margin-left: 100px;
+}
+
+#tarjetasContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Media query para dispositivos con una anchura mínima de 768px */
+@media only screen and (max-width: 767px) {
+  #conteiner {
+    grid-template-columns: 1fr; 
+    height: auto; 
+    padding: 20px; 
+  }
+
+  app-foto-pokemon {
+    margin-left: 0; 
+    margin-bottom: 20px; 
+  }
+}
