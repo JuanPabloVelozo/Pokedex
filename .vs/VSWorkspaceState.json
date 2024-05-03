@@ -4,13 +4,14 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
-    "\\src\\app\\components\\foto-pokemon",
     "\\src\\app\\components\\tarjeta-pokemon",
+    "\\src\\app\\interfaces",
     "\\src\\app\\pages",
     "\\src\\app\\pages\\home",
+    "\\src\\app\\services",
     "\\src\\assets",
     "\\src\\assets\\styles"
   ],
-  "SelectedNode": "\\src\\app\\components\\tarjeta-pokemon\\tarjeta-pokemon.component.ts",
+  "SelectedNode": "\\src\\app\\app.component.ts",
   "PreviewInSolutionExplorer": false
 }

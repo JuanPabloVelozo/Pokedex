@@ -1,7 +1,7 @@
 #conteiner {
   height: calc(100vh - 110px); //distancia del header
   display: grid;
-  grid-template-columns: 0.57fr 1fr;
+  grid-template-columns: 0.58fr 1fr;
   align-items: center;
   background: #79a9e3;
 }
@@ -14,6 +14,8 @@ app-foto-pokemon {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  max-height: 100%;
+  overflow-y: scroll;
 }
 
 /* Media query para dispositivos con una anchura mínima de 768px */
@@ -27,5 +29,10 @@ app-foto-pokemon {
   app-foto-pokemon {
     margin-left: 0; 
     margin-bottom: 20px; 
+  }
+
+  #tarjetasContainer {
+    max-height: calc(100vh - 200px);
+    overflow-y: scroll;
   }
 }
