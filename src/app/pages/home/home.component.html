@@ -1,8 +1,15 @@
 <main id="conteiner">
-  <app-foto-pokemon></app-foto-pokemon>
+  <app-foto-pokemon [pokemon]="pokemonSelect">
+    
+  </app-foto-pokemon>
   <div id="tarjetasContainer">
-    <app-tarjeta-pokemon *ngFor="let pokemon of listaPokemon" [data]="pokemon">
-
+    <br />
+    <app-tarjeta-pokemon *ngFor="let pokemon of listaPokemon"
+                         [data]="pokemon"
+                         [seleccionado]="pokemon.name===pokemonSelect?.name"
+                         (clickeado)="tarjetaClickeada($event)">
+      
     </app-tarjeta-pokemon>
+    <br />
   </div>
 </main>

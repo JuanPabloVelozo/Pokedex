@@ -5,4 +5,11 @@
   aspect-ratio: 1;
   border-radius: 25px;
   background: repeating-linear-gradient( to bottom, #f5f7f9, #f5f7f9 15px, #c9e2f4 15px, #c9e2f4 25px);
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+img {
+  
+  width: 100%;
 }
