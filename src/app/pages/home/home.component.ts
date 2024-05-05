@@ -8,17 +8,32 @@ import { Resultado } from '../../interfaces/pokeapi';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  //accede al servicio
   constructor(private pokemonService: PokemonService) { }
 
-  listaPokemon: Resultado[] = []
+  listaPokemon: Resultado[] = [];
+  listaPokemonOrigen: Resultado[] = [];
+  terminoBusqueda = "";
 
   ngOnInit(): void {
     this.cargarLista();
-    this.pokemonService.getById("1");
+    this.pokemonService.terminoBusqueda$.subscribe(termino => {
+      this.terminoBusqueda = termino;
+      this.filtrarLista();
+    });
   }
 
   async cargarLista() {
-    this.listaPokemon = [...this.listaPokemon, ...await this.pokemonService.getByPage()];
+    this.listaPokemonOrigen = await this.pokemonService.getByPage();
+    this.listaPokemon = this.listaPokemonOrigen.slice(); 
+  }
+
+  filtrarLista() {
+     if (this.terminoBusqueda !== "") {
+      this.listaPokemon = this.listaPokemonOrigen.filter(pokemon => 
+        pokemon.name.toLowerCase().includes(this.terminoBusqueda.toLowerCase())
+      );
+    } else {
+      this.listaPokemon = this.listaPokemonOrigen.slice(); 
+    }
   }
 }

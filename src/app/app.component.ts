@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PokemonService } from './services/pokemon.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Pokedex';
-  
+  constructor(private pokemonService: PokemonService) { }
+  buscar(termino: string) {
+    this.pokemonService.almacenarBusqueda(termino); // Llama al método buscar del servicio con el término de búsqueda
+  }
 }

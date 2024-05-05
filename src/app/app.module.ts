@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { FotoPokemonComponent } from './components/foto-pokemon/foto-pokemon.component';
 import { TarjetaPokemonComponent } from './components/tarjeta-pokemon/tarjeta-pokemon.component';
 import { DetalleComponent } from './components/detalle/detalle.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { DetalleComponent } from './components/detalle/detalle.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

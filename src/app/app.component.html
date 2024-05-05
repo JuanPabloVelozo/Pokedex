@@ -5,8 +5,8 @@
     <img src="./../assets/img/Pokeball.png" alt="Pokeball" class="boton-imagen" />
   </div>
   <div class="search-container">
-    <form action="#" method="get">
-      <input type="text" name="search" placeholder="Buscar...">
+    <form #searchForm="ngForm" (ngSubmit)="buscar(search.value)">
+      <input type="text" name="search" ngModel #search="ngModel" placeholder="Buscar...">
       <button type="submit" class="boton-imagen">
         <img src="./../assets/img/Lupa_EP.png" alt="Buscar">
       </button>
