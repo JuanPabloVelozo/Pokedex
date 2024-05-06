@@ -8,7 +8,14 @@
 
 app-foto-pokemon {
   margin-left: 100px;
+  z-index: 2;
 }
+
+app-detalle {
+  position: absolute;
+  z-index: 1;
+}
+
 
 #tarjetasContainer {
   display: flex;
