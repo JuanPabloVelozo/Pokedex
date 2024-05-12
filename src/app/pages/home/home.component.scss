@@ -39,6 +39,13 @@ app-detalle {
     margin-bottom: 20px; 
   }
 
+  app-detalle {
+    position: absolute;
+    top: calc(100% - 80px); 
+    left: 0;
+    z-index: 1;
+  }
+
   #tarjetasContainer {
     max-height: calc(100vh - 200px);
     overflow-y: scroll;
