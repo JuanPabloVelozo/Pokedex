@@ -1,0 +1,67 @@
+#conteiner {
+  height: calc(100vh - 110px); //distancia del header
+  display: grid;
+  grid-template-columns: 0.68fr 1fr;
+  align-items: center;
+  background: #79a9e3;
+}
+
+app-foto-pokemon {
+  margin-left: 100px;
+  z-index: 2;
+}
+
+app-detalle {
+  position: absolute;
+  z-index: 1;
+  left: -90vw;
+  transition: 01s;
+  transition-timing-function: ease-in-out;
+  &.abierto{
+      left: 0;
+  }
+}
+
+
+#tarjetasContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #f4f4f4;
+  border: 3px solid #e63946;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  scrollbar-width: thin;
+  scrollbar-color: #ffcb05 #3b4cca;
+}
+
+/* Media query para dispositivos con una anchura mínima de 768px */
+@media only screen and (max-width: 767px) {
+  #conteiner {
+    grid-template-columns: 1fr; 
+    height: auto; 
+    padding: 20px; 
+  }
+
+  app-foto-pokemon {
+    margin-left: 0; 
+    margin-bottom: 20px; 
+  }
+
+  app-detalle {
+    position: absolute;
+    top: calc(100% - 80px); 
+    left: 0;
+    z-index: 1;
+  }
+
+  #tarjetasContainer {
+    max-height: calc(100vh - 200px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+}

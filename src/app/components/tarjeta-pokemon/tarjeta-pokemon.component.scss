@@ -1,0 +1,44 @@
+#container {
+    position: relative;
+  display: flex;
+  align-items: center;
+  isolation: isolate;
+  &.seleccionado::before{
+      position: absolute;
+      content:"";
+      width: calc(100% + 2px); // mas 8px de container padre
+      height: 120%;
+      left: 0px;
+      background-color: red;
+      z-index: -1;
+      border-radius: 5px;
+
+  }
+}
+
+#flecha{
+    position: absolute;
+    height: 20px;
+    padding-left: 0 10px;
+}
+
+#tarjeta{
+    display: flex;
+    align-items: center;
+    background-color: #fceab8;
+    border-radius: 25px 5px 5px 25px;
+    width: 90%;
+    font-size: larger;
+    padding-left: 5px;
+    margin-left: 20px;
+    gap: 1rem; 
+}
+#circulo{
+    border-radius: 50%;
+    height: 25px;
+    aspect-ratio: 1;
+    background-color: rgb(0,0,0,0.125);
+}
+img{
+    max-height: 40px
+}

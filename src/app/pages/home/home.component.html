@@ -1,0 +1,20 @@
+<main id="conteiner">
+  <app-detalle [pokemon]="pokemonSelect"
+    (clicked)="cambiarEstadoDetalle()"
+    [abierto]="detalle"
+    [ngClass]="{abierto: detalle}"
+               ></app-detalle>
+  <app-foto-pokemon [pokemon]="pokemonSelect">
+
+  </app-foto-pokemon>
+
+  <div id="tarjetasContainer">
+    <br />
+    <app-tarjeta-pokemon *ngFor="let pokemon of listaPokemon"
+                         [data]="pokemon"
+                         [seleccionado]="pokemon.name===pokemonSelect?.name"
+                         (clickeado)="tarjetaClickeada($event)">
+    </app-tarjeta-pokemon>
+    <br />
+  </div>
+</main>
