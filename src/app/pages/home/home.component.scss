@@ -17,8 +17,9 @@ app-detalle {
   left: -90vw;
   transition: 01s;
   transition-timing-function: ease-in-out;
-  &.abierto{
-      left: 0;
+
+  &.abierto {
+    left: 0;
   }
 }
 
@@ -42,26 +43,34 @@ app-detalle {
 /* Media query para dispositivos con una anchura mínima de 768px */
 @media only screen and (max-width: 767px) {
   #conteiner {
-    grid-template-columns: 1fr; 
-    height: auto; 
-    padding: 20px; 
+    position: relative; /* para que app-detalle se posicione relativo */
+    grid-template-columns: 1fr;
+    height: auto;
+    padding: 20px;
   }
 
   app-foto-pokemon {
-    margin-left: 0; 
-    margin-bottom: 20px; 
+    margin-left: 0;
+    margin-bottom: 20px;
   }
 
   app-detalle {
     position: absolute;
-    top: calc(100% - 80px); 
-    left: 0;
+    top: 45%;
+    left: -100vw; /* fuera de pantalla inicialmente */
+    width: 100%;
     z-index: 1;
+    transition: left 0.3s ease-in-out;
+  }
+
+  app-detalle.abierto {
+    left: 0;
   }
 
   #tarjetasContainer {
-    max-height: calc(100vh - 200px);
-    overflow-y: scroll;
+    height: 500px; /* Altura fija */
+    max-height: unset;
+    overflow-y: auto;
     overflow-x: hidden;
   }
 }

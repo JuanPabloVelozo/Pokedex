@@ -70,20 +70,41 @@
 /* Estilos específicos para dispositivos móviles */
 @media screen and (max-width: 600px) {
   header {
-    flex-direction: column; 
-    height: auto; 
+    flex-direction: column;
+    height: auto;
   }
 
+
   #tituloContainer {
-    margin-bottom: 10px; 
-    width: 90%; 
-    padding: 0 20px; 
+    margin-bottom: 10px;
+    width: 90%;
+    padding: 0 20px;
   }
 
   .search-container {
     justify-content: center;
-    width: 90%; 
-    display: flex; 
+    width: 90%;
+    display: flex;
+  }
+
+  .search-container form {
+    flex: 1; /* ocupa todo el espacio posible */
+    display: flex;
+  }
+
+  .search-container input[type="text"] {
+    width: 100%; /* ocupa todo el ancho del form */
+    min-width: 0; /* evita overflow en navegadores */
+    box-sizing: border-box;
+    padding: 8px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+  }
+
+  .search-container img {
+    height: 25px;
+    margin-left: 10px;
+    flex-shrink: 0; /* que la imagen no se reduzca */
   }
 
  
